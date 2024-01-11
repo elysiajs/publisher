@@ -6,8 +6,8 @@ Elysia local CI to locally test and publish new version concurrently by spawing 
 It's intent to place the structure in the same level of plugins as follows:
 
 - folder
--- publisher
--- [other elysia plugins]
+- - publisher
+- - [other elysia plugins]
 
 ## Command
 See `package.json` script, should be self explainary.
