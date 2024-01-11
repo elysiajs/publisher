@@ -1,0 +1,29 @@
+{
+  "name": "publisher",
+  "module": "index.ts",
+  "scripts": {
+    "release": "bun src/release.ts",
+    "test": "bun src/test.ts",
+    "push": "bun src/push.ts",
+    "rename": "bun src/rename-version.ts",
+    "build": "bun src/build.ts",
+    "update": "bun src/update.ts",
+    "update:peer": "bun src/peer.ts",
+    "reinstall": "bun src/install.ts",
+    "overwrite": "bun src/overwrite.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "elysia": "0.8.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "0.8.0": "",
+    "dayjs": "^1.11.9",
+    "ora": "^7.0.1",
+    "tasuku": "^2.0.1"
+  }
+}
