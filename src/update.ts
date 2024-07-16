@@ -1,8 +1,9 @@
+import { writeFile } from 'fs/promises'
 import packages from './packages'
 import { getVersion } from './utils'
 
 const version = getVersion()
-const cmd = ['bun', 'add', '-d', `elysia@${version}`]
+
 const ops: Promise<void>[] = []
 
 for (const name of packages)
@@ -12,12 +13,24 @@ for (const name of packages)
                 `${name}/package.json`
             ).json()
 
-            if (packageJson.devDependencies.elysia === version) return
+            await writeFile(
+                `${name}/package.json`,
+                JSON.stringify(
+                    {
+                        ...packageJson,
+                        devDependencies: {
+                        	...packageJson.devDependencies,
+                         	elysia: version
+                        }
+                    } satisfies PackageJSON,
+                    null,
+                    4
+                )
+            )
 
-            await Bun.spawn({
-                cmd,
-                cwd: name,
-                stdout: 'ignore'
-            })
+            Bun.$.cwd(name)
+            await Bun.$`rm -rf node_modules && rm bun.lockb && bun add -d elysia@${version}`
         })()
     )
+
+await Promise.all(ops)

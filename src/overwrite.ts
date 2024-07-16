@@ -28,3 +28,5 @@ for (const name of packages)
             )
         })()
     )
+
+await Promise.all(ops)

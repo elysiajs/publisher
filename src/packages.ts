@@ -3,18 +3,19 @@ import { join } from 'path'
 export const names = [
     'apollo',
     'bearer',
-    'cookie',
+    // 'cookie',
     'cors',
     'cron',
-    'eden',
+    // 'eden',
     // 'fn',
     'graphql-yoga',
     'html',
     'jwt',
+    'opentelemetry',
     // 'lucia-auth',
     'server-timing',
     'static',
-    'stream',
+    // 'stream',
     'swagger',
     'trpc'
 ] as const

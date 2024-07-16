@@ -12,18 +12,18 @@
     "reinstall": "bun src/install.ts",
     "overwrite": "bun src/overwrite.ts"
   },
-  "devDependencies": {
-    "bun-types": "latest",
-    "elysia": "0.8.0"
-  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "type": "module",
   "dependencies": {
-    "0.8.0": "",
+    "@types/bun": "^1.0.8",
     "dayjs": "^1.11.9",
     "ora": "^7.0.1",
+    "rimraf": "^5.0.5",
     "tasuku": "^2.0.1"
+  },
+  "devDependencies": {
+    "elysia": "1.1.0-rc.2"
   }
 }

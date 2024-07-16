@@ -28,6 +28,8 @@ for (const cwd of packages)
                 stdout: null
             })
 
-            await commit.exited
+            await push.exited
         })()
     )
+
+await Promise.all(ops)
